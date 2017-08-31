@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>asAlways</title>
-</head>
-<body>
-  <h1>asAlways</h1>
-</body>
-</html>
+---
+layout: default
+title: asAlways' blog
+---
+
+<h2>{{ page.title }}</h2>
+
+<p>最新文章</p>
+
+<ul class="articleList">
+
+	{% for post in site.posts %} 
+		<li><span class="date">{{ post.date | date_to_string }}</span><br /> 
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+		</li>
+	{% endfor %}
+
+</ul>
